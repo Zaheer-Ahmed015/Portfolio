@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaheer Ahmed | Portfolio</title>
+    <style>
+        /* Google Font */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f4f4f4;
+            color: #333;
+            transition: background 0.5s, color 0.5s;
+        }
+
+        .dark-mode {
+            background: #222;
+            color: white;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #000428, #004e92);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.5s, box-shadow 0.5s;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 5px 10px;
+            transition: color 0.3s, background 0.3s;
+            border-radius: 5px;
+        }
+
+        nav ul li a.active,
+        nav ul li a:hover {
+            background: cyan;
+            color: black;
+        }
+
+        /* Responsive Navigation */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background: #004e92;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .toggle-icon {
+                display: block;
+            }
+        }
+
+        .toggle-icon {
+            display: none;
+        }
+
+        .toggle-icon.active + nav ul {
+            display: flex;
+        }
+         header:hover {
+            background: linear-gradient(135deg, #004e92, #000428);
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            transition: color 0.5s;
+        }
+
+        header h1:hover {
+            color: #ffa500;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 5px 10px;
+            transition: color 0.3s, background 0.3s;
+        }
+
+        nav ul li a.active,
+        nav ul li a:hover {
+            background: cyan;
+            color: black;
+            border-radius: 5px;
+        }
+
+        /* Toggle Icon */
+        .toggle-icon {
+            font-size: 24px;
+            cursor: pointer;
+            padding: 10px;
+            transition: color 0.3s;
+        }
+
+        .toggle-icon:hover {
+            color: cyan;
+        }
+
+        /* Sections */
+        section {
+            padding: 50px;
+            margin: 20px;
+            background: white;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            transition: background 0.5s, color 0.5s;
+        }
+
+        .dark-mode section {
+            background: #333;
+            color: white;
+        }
+
+        h2 {
+            text-align: center;
+            color: #004e92;
+            margin-bottom: 20px;
+            font-size: 2em;
+            letter-spacing: 2px;
+        }
+
+        /* About Section */
+        .about-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .about-container img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 3px solid #004e92;
+            object-fit: cover;
+        }
+
+        .about-text {
+            max-width: 600px;
+        }
+
+        .about-text p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #000428;
+            color: white;
+            margin-top: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .about-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-container img {
+                width: 200px;
+                height: 200px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 5px;
+            }
+        }
+        .scroll-up {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ffa500;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scroll-up:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Zaheer Ahmed</h1>
+        <nav>
+            <ul>
+                <li><a href="#about" class="nav-link">Home</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#certification">Certification</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+            </ul>
+        </nav>
+        <span class="toggle-icon" onclick="toggleMode()">🌙</span>
+    </header>
+
+    <!-- About Me Section -->
+    <section id="about" style="background-image: url('background.jpg'); background-size: cover; background-position: center; color: white;">
+        <div class="about-container" style="background: rgba(0, 0, 0, 0.7); padding: 20px; border-radius: 10px; animation: fadeIn 2s;">
+            <div class="about-text">
+                <div class="animated-text"></div>
+                <h1 style="animation: slideInLeft 1s;">Hi There,</h1>
+                <h2 style="animation: slideInRight 1s;">I'm Zaheer <span style="color: orange;">Ahmed</span></h2>
+                <p style="animation: fadeIn 2s;">I am <span style="color: red; font-weight: bold;">passionate about AI,ML & Cybersecurity</span></p>
+                <p style="animation: fadeIn 2s;">👋 Hello! I’m Zaheer Ahmed</p>
+                <p style="animation: fadeIn 2s;">🎓 I am a passionate B.Tech student specializing in Information Technology Engineering at Baba Ghulam Shah Badshah University, Rajouri (Batch 2023). 🎓</p>
+                <p style="animation: fadeIn 2s;">💡 My focus is on IT and AI,ML,cybersecurity, and I actively seek opportunities to collaborate and innovate.</p>
+            </div>
+            <img src="profile.jpg" alt="Zaheer Ahmed" style="border: 3px solid rgb(10, 58, 179); animation: zoomIn 1s;">
+        </div>
+    </section>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Education Section</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <style>
+            /* Global Styles */
+            body {
+                font-family: 'Poppins', sans-serif;
+                background-color: #eef2ff;
+                margin: 0;
+                padding: 0;
+            }
+            
+            /* Education Section */
+            .education {
+                text-align: center;
+                padding: 50px 20px;
+            }
+            .heading {
+                font-size: 2.5rem;
+                color: #3c3b6e;
+                font-weight: 700;
+                margin-bottom: 10px;
+            }
+            .heading i {
+                color: #6a5acd;
+                margin-right: 10px;
+            }
+            .quote {
+                font-size: 1.2rem;
+                color: #666;
+                margin-bottom: 40px;
+                font-style: italic;
+            }
+            
+            /* Education Cards */
+            .box-container {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+            .box {
+                background: white;
+                border-radius: 15px;
+                overflow: hidden;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+                transition: transform 0.4s ease-in-out, box-shadow 0.3s ease-in-out;
+                width: 90%;
+                max-width: 800px;
+                display: flex;
+                align-items: center;
+                border-left: 8px solid #6a5acd;
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            .box:hover {
+                transform: scale(1.02);
+                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+            }
+            .image {
+                width: 35%;
+                height: 100%;
+            }
+            .image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                cursor: pointer;
+            }
+            .content {
+                padding: 20px;
+                text-align: left;
+                width: 65%;
+            }
+            .content h3 {
+                font-size: 1.5rem;
+                color: #3c3b6e;
+                font-weight: 600;
+                margin-bottom: 8px;
+            }
+            .content p {
+                font-size: 1rem;
+                color: #555;
+                margin-bottom: 10px;
+            }
+            .content h4 {
+                font-size: 1rem;
+                color: #32cd32;
+                font-weight: 500;
+            }
+            /* Responsive Design */
+            @media (max-width: 768px) {
+                .box {
+                    flex-direction: column;
+                    text-align: center;
+                }
+                .image {
+                    width: 100%;
+                }
+                .content {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        </style>
+        <section class="education" id="education">
+        <h1 class="heading"><i class="fas fa-graduation-cap"></i> My <span>Education</span></h1>
+        <p class="quote">Education Is Not The Learning Of Facts, But The Training Of The Mind To Think.</p>
+        <div class="box-container">
+            <div class="box">
+                <div class="image" onclick="window.open('//maps.app.goo.gl/st1GNwnLm69K3pQd7', '_blank')">
+                    <img src="certificates/bgsbu.jpg" alt="BGSBU Image">
+                </div>
+                <div class="content">
+                    <h3>Bachelor Of Engineering In Information Technology</h3>
+                    <p>Baba Ghulam Shah Badshah University Rajouri</p>
+                    <h4>2023-2027 | Pursuing</h4>
+                </div>
+            </div>
+            <div class="box">
+                <div class="image" onclick="window.open('//maps.app.goo.gl/YRt32L2Z3rezcXEU8', '_blank')">
+                    <img src="certificates/RUIHSS.jpg" alt="RUIHSS Poonch Image">
+                </div>
+                <div class="content">
+                    <h3>Higher Secondary Education (Non-Medical Stream)</h3>
+                    <p>RUIHSS Poonch</p>
+                    <h4>2021-2023 | Completed</h4>
+                </div>
+            </div>
+            <div class="box">
+                <div class="image" onclick="window.open('//maps.app.goo.gl/xBraP7Po46GEzWA77', '_blank')">
+                    <img src="certificates/YES Mandi.jpg" alt="Yaseen English School Image">
+                </div>
+                <div class="content">
+                    <h3>Secondary Education</h3>
+                    <p>Yaseen English School Mandi, Poonch</p>
+                    <h4>2016-2021 | Completed</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const boxes = document.querySelectorAll(".box");
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = "translateY(0)";
+                    }
+                });
+            }, { threshold: 0.3 });
+            boxes.forEach(box => observer.observe(box));
+        });
+    </script>
+
+    <style>
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInLeft {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideInRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+    </style>
+
+    <!-- Skills Section -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #500872, #26054d);
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            text-align: center;
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: 60px 20px;
+        }
+
+        .heading {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #ffcc00;
+        }
+
+        .heading i {
+            color: #060b64;
+            margin-right: 10px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .skill-box {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .skill-box:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+        }
+
+        .skill-box img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
+        .skill-box span {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #ffcc00;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .row {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Skills Section -->
+    
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+        <style>
+            /* Global Styles */
+            body {
+                font-family: 'Poppins', sans-serif;
+                background: linear-gradient(to right, #500872, #26054d);
+                margin: 0;
+                padding: 0;
+                color: #fff;
+                text-align: center;
+                overflow-x: hidden;
+            }
+    
+            /* Skills Section */
+            .skills {
+                padding: 60px 20px;
+                opacity: 0;
+                transform: translateY(30px);
+                animation: fadeInUp 1s forwards;
+            }
+    
+            @keyframes fadeInUp {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+    
+            .heading {
+                font-size: 2.5rem;
+                font-weight: 700;
+                margin-bottom: 30px;
+                color: #1e1a54;
+                text-shadow: 0 0 10px rgba(241, 241, 241, 0.8);
+            }
+    
+            .container {
+                display: flex;
+                justify-content: center;
+            }
+    
+            .row {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 20px;
+                max-width: 900px;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.1);
+                padding: 30px;
+                border-radius: 20px;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+                backdrop-filter: blur(10px);
+            }
+    
+            .skill-box {
+                /* background: rgba(255, 255, 255, 0.1); */
+                border-radius: 12px;
+                padding: 15px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                transition: transform 0.3s, box-shadow 0.3s;
+                backdrop-filter: blur(1px);
+            }
+    
+            .skill-box:hover {
+                transform: scale(1.1);
+                box-shadow: 0 8px 16px rgba(255, 255, 255, 0.3);
+                background: rgba(255, 255, 255, 0.2);
+            }
+    
+            .skill-box img {
+                width: 50px;
+                height: 50px;
+                margin-bottom: 10px;
+            }
+    
+            .skill-box span {
+                font-size: 1rem;
+                font-weight: 500;
+                color: #1e025e;
+            }
+    
+            /* Responsive */
+            @media (max-width: 768px) {
+                .row {
+                    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                }
+            }
+        </style>
+    </head>
+    <body>
+    
+        <!-- Skills Section -->
+        <section class="skills" id="skills">
+            <h2 class="heading"><i class="fas fa-laptop-code"></i> Skills & <span>Abilities</span></h2>
+            <div class="container">
+                <div class="row" id="skillsContainer"></div>
+            </div>
+        </section>
+    
+        <script>
+            const skills = [
+            { name: "JavaScript", icon: "https://img.icons8.com/color/48/000000/javascript.png" },
+            { name: "Java", icon: "https://img.icons8.com/color/48/000000/java-coffee-cup-logo.png" },
+            { name: "Python", icon: "https://img.icons8.com/color/48/000000/python.png" },
+            { name: "C++", icon: "https://img.icons8.com/color/48/000000/c-plus-plus-logo.png" },
+            { name: "MySQL", icon: "https://img.icons8.com/color/48/000000/mysql-logo.png" },
+            { name: "GitHub", icon: "https://img.icons8.com/glyph-neue/64/000000/github.png" },
+            { name: "WordPress", icon: "https://img.icons8.com/color/48/000000/wordpress.png" },
+            { name: "HTML", icon: "https://img.icons8.com/color/48/000000/html-5.png" },
+            { name: "CSS", icon: "https://img.icons8.com/color/48/000000/css3.png" },
+            { name: "C", icon: "https://img.icons8.com/color/48/000000/c-programming.png" }
+        ];
+            const skillsContainer = document.getElementById("skillsContainer");
+    
+            skills.forEach(skill => {
+                const skillBox = document.createElement("div");
+                skillBox.classList.add("skill-box");
+    
+                skillBox.innerHTML = `
+                    <img src="${skill.icon}" alt="${skill.name}">
+                    <span>${skill.name}</span>
+                `;
+    
+                skillsContainer.appendChild(skillBox);
+            });
+        </script>
+<!-- Projects Section -->
+<section class="projects" id="projects">
+    <h1 class="heading"><i class="fas fa-code"></i> My <span>Projects</span></h1>
+    <p class="quote">"Code is like humor. When you have to explain it, it’s bad." – Cory House</p>
+    <div class="box-container">
+        <div class="box" onclick="window.open('//zaheer-ahmed015.github.io/sardardullicommunity/', '_blank')">
+            <div class="image">
+                <img src="certificates/Dulli community.png" alt="Sardar Dulli Community">
+            </div>
+            <div class="content">
+                <h3>Sardar Dulli Community</h3>
+                <p>Discover the history and culture of the Sardar Dulli community.</p>
+            </div>
+        </div>
+        <div class="box" onclick="window.open('//zaheer-ahmed015.github.io/BGSBU-Cleanliness-Page/', '_blank')">
+            <div class="image">
+                <img src="certificates/cleanliness.png" alt="BGSBU Cleanliness web page">
+            </div>
+            <div class="content">
+                <h3>BGSBU Cleanliness web page</h3>
+                <p>Cleanliness web page in which we can upload images of garbage at any place with address and description. It also contains rating.</p>
+            </div>
+        </div>
+        <div class="box" onclick="window.open('https://example.com/resumegen', '_blank')">
+            <div class="image">
+                <img src="project-images/project3.jpg" alt="Resume Generator">
+            </div>
+            <div class="content">
+                <h3>Resume Generator</h3>
+                <p>A dynamic resume-building web app that lets users generate professional resumes easily.</p>
+            </div>
+        </div>
+        <div class="box" onclick="window.open('https://example.com/react-projects', '_blank')">
+            <div class="image">
+                <img src="project-images/project4.jpg" alt="React Projects">
+            </div>
+            <div class="content">
+                <h3>React Projects Collection</h3>
+                <p>A set of useful React.js projects demonstrating various UI/UX and API integrations.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .projects {
+        padding: 60px 20px;
+        background: white;
+        color: black;
+        text-align: center;
+    }
+
+    .projects .heading {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 30px;
+        color: #03158b; /* Same dark blue color as project titles */
+        text-shadow: 0 0 10px rgba(241, 241, 241, 0.8);
+    }
+
+    .projects .quote {
+        font-size: 1.2rem;
+        margin-bottom: 40px;
+        font-style: italic;
+        color: black;
+    }
+
+    .projects .box-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .projects .box {
+        background: rgba(220, 218, 218, 0.1);
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        transition: transform 0.4s ease-in-out, box-shadow 0.3s ease-in-out;
+        width: 300px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .projects .box:hover {
+        transform: scale(1.05);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    .projects .box .image {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+    }
+
+    .projects .box .image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .projects .box:hover .image img {
+        transform: scale(1.1);
+    }
+
+    .projects .box .content {
+        padding: 20px;
+        text-align: left;
+    }
+
+    .projects .box .content h3 {
+        font-size: 1.5rem;
+        color: #03158b;
+        margin-bottom: 10px;
+    }
+
+    .projects .box .content p {
+        font-size: 1rem;
+        color: black;
+    }
+</style>
+
+
+
+
+<!-- Certification Section -->
+<section id="certification">  <!-- ID ko lowercase mein "certification" rakha hai -->
+    <h2><i class="fas fa-briefcase"></i> <span><b>Certification</b></span>
+    </h2>
+    <div class="certificate-container">
+        <div class="certificate">
+            <img src="certificates/common internship test.jpg" alt="Common Internship Test">
+            <h3>Common Internship Test</h3>
+            <p>Certificate of participation for participating in the common internship Test conducted by Internship Studio</p>
+            <a href="certificates/certificate1.pdf" target="_blank">View Certificate</a>
+        </div>
+
+        <div class="certificate">
+            <img src="certificates/skill nation.jpg" alt="Skill Nation">
+            <h3>Skill Nation</h3>
+            <p>Successfully completed the live masterclass on Claude AI from Skill Nation! This comprehensive program was conducted by Microsoft certified expert Hardik Raja.</p>
+            <a href="certificates/certificate2.pdf" target="_blank">View Certificate</a>
+        </div>
+
+        <div class="certificate">
+            <img src="certificates/cert3.jpg" alt="Web Development Mastery">
+            <h3>CyberSecurity Internship Certificate</h3>
+            <p>Zaheer Ahmed successfully completed online training on “Ethical Hacking and Penetration Testing” with a virtual internship, conducted by C-DAC Noida under the Cyber Gyan Project from Jan–Mar 2025.</p>
+            <a href="certificates/cert3.pdf" target="_blank">View Certificate</a>
+        </div>
+    </div>
+</section>
+
+<!-- CSS Styling -->
+<style>
+    html {
+        scroll-behavior: smooth; /* Smooth scrolling when clicking navigation */
+    }
+    #certification {
+        text-align: center;
+        padding: 50px;
+        background: #f4f4f4;
+    }
+    .certificate-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+    .certificate {
+        background: white;
+        padding: 15px;
+        width: 300px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+    }
+    .certificate img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+    .certificate h3 {
+        margin: 10px 0;
+        font-size: 18px;
+        color: #333;
+    }
+    .certificate p {
+        font-size: 14px;
+        color: #666;
+    }
+    .certificate a {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 8px 12px;
+        background: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+    }
+    .certificate a:hover {
+        background: #0056b3;
+}
+
+.footer {
+    background-color: #0a0a2a;
+    padding:30px 50px;
+    display:flex;
+    justify-content:space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.footer-section {
+    max-width: 300px;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.footer-section p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.quick-links ul {
+    list-style: none;
+}
+
+.quick-links ul li {
+    margin: 7px 0;
+}
+
+.quick-links ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.quick-links ul li a::before {
+    content: "➤";
+    color: #ffa500;
+    margin-right: 8px;
+}
+
+.quick-links ul li a:hover,
+.quick-links ul li a.active {
+    color: #ffa500;
+}
+
+.contact-info p {
+    font-size: 16px;
+    margin: 7px 0;
+    display: flex;
+    align-items: center;
+}
+
+.social-icons {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    background-color: white;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.social-icons a img {
+    width: 20px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px;
+    background-color: #0a0a2a;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 14px;
+}
+
+.footer-bottom span {
+    color: #ffa500;
+}
+
+.chat-icon {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.scroll-up {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ffa500;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+</style>
+
+
+
+    <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-section">
+                <h3>Zaheer's Portfolio</h3>
+                <p>Thank you for visiting my personal portfolio website. Connect with me over socials.</p>
+                <p>Keep Rising 🚀. Connect with me over live chat!</p>
+            </div>
+        
+    <div class="footer-section quick-links">
+        <h3>Quick Links</h3>
+        <ul>
+            <li><a href="#about">Home</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certification">Certification</a></li>
+            <li><a href="#education">Education</a></li>
+        </ul>
+    </div>
+            <div class="footer-section contact-info">
+                <h3>Contact Info</h3>
+                <p>📍 Poonch, Jammu and Kashmir</p>
+                <p>📞 +91 910-307-8148</p>
+                <p>✉️ zaheerkhanzaheer015@gmail.com</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/zaheer-ahmed-9aa88830a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn"></a>
+                    <a href="https://github.com/Zaheer-Ahmed015" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub"></a>
+                    <a href="mailto:zaheerkhanzaheer015@gmail.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email"></a>
+                    <a href="https://x.com/zaheerkhan04ITE?t=tsRqEemyvvmiBxaoXVyofA&s=09" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter"></a>
+                    <a href="http://t.me/IT_Zaheer" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram"></a>
+                </div>
+            </div>
+        </footer>
+        
+        <div class="footer-bottom">
+            Designed By <span>Zaheer Ahmed</span>
+        </div>
+        <div class="chat-icon" onclick="window.location.href='//wa.me/919103078148'">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="Chat Icon" style="width: 24px; height: 24px; background: none;">
+        </div>
+        
+        <div class="scroll-up" onclick="scrollToTop()">
+            ⬆
+        </div>
+
+        <script>
+            function toggleMode() {
+                document.body.classList.toggle("dark-mode");
+                const icon = document.querySelector(".toggle-icon");
+                icon.textContent = document.body.classList.contains("dark-mode") ? "🌙" : "☀";
+            }
+            function scrollToTop() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        </script>
+        <!-- footer section ends -->
+
+
+    <script>
+        function toggleMode() {
+            document.body.classList.toggle("dark-mode");
+            const icon = document.querySelector(".toggle-icon");
+            icon.textContent = document.body.classList.contains("dark-mode") ? "🌙" : "☀";
+        }
+        function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+    </script>
+</body>
+</html>
